@@ -18,9 +18,8 @@ public class App {
         Utils.printSymbol("-", 20);
         
         Utils.print("\nYour choice: ");
-        int choice = Utils.scanInt();
-        
-        switch(choice) {
+                
+        switch(Utils.scanInt()) {
             case 1:
                 Utils.printSymbol("*", 30);
                 Utils.println("\nAdd a new campaign");
