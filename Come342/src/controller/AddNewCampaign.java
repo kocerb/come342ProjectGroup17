@@ -55,4 +55,4 @@ public class AddNewCampaign {
 		Utils.println("Campaign added succesfully.");
 	}
 
-}}
+}
