@@ -9,7 +9,7 @@ public class Campaign {
     private String finishDate;
     private Double estimatedCost;
   
-    public Campaign(title, startDate, finishDate, estimatedCost){
+    public Campaign(String title, String startDate, String finishDate, Double estimatedCost){
     	this.setTitle(title);
     	this.setDate(startDate, finishDate);
     	this.setEstimatedCost(estimatedCost);
