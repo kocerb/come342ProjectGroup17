@@ -9,27 +9,33 @@ public class Client {
     private String contactName; 
     private List<Campaign> CampaignList = new ArrayList<Campaign>();
         
-    public Client(){}
+    public Client(){
+        //PINAR
+    }
        
     public List<Campaign> getClientCampaign(){ 
         return CampaignList; 
     } 
-    public void setcompanyName(String cname){ 
+    public void setCompanyName(String cname){ 
         companyName=cname; 
     } 
-    public void setcompanyAddress(String cadd){ 
+    public void setCompanyAddress(String cadd){ 
         companyAddress=cadd; 
     } 
-    public void setcontactName(String conName){ 
+    public void setContactName(String conName){ 
         contactName=conName; 
     } 
     public String getContactName(){ 
         return contactName; 
     } 
-    public String getcompanyName(){
+    public String getCompanyName(){
         return companyName;
     } 
-    public String getcompanyAddress(){
+    public String getCompanyAddress(){
         return companyAddress; 
-    } 
+    }
+    
+    public void addNewCampaign(Campaign campaign) {
+        this.CampaignList.add(campaign);
+    }
 }    

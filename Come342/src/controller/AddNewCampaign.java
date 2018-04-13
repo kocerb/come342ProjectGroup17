@@ -1,18 +1,23 @@
 package controller;
 
 import helper.Utils;
-import helper.Database;
+import come342.Database;
 import model.Client;
 import model.Campaign;
 
 public class AddNewCampaign {
-    public AddNewCampaign() {
-    	getClients();
+    private static final AddNewCampaign instance = new AddNewCampaign();
+    
+    public static AddNewCampaign getInstance() {
+        return instance;
+    }
+    
+    private AddNewCampaign(){
+       	getClients();
     	selectClient();
-    	addCampaign();    
     }
 
- 	private List<Client> getClients() {
+    private void getClients() {
 	  	Utils.println("Select a client to add campaign:");
 	  	int i = 1;
 	  	Database.clientList.forEach((client) -> {
@@ -23,13 +28,13 @@ public class AddNewCampaign {
 	  	Utils.println("Selection: ");
 	}
 
-	private selectClient() {
+    private void selectClient() {
 	  	int choice = Utils.scanInt();
 	  	Client selectedClient = Database.clientList.get(choice - 1);
 		this.addCampaign(selectedClient);
 	}
 
-	private addCampaign(Client client) {
+    private void addCampaign(Client client) {
 		Utils.println("Enter campaign details");
 		
 		Utils.print("Campaign Name: ");
@@ -45,12 +50,12 @@ public class AddNewCampaign {
 		Utils.print("\n");		
 
 		Utils.print("Estimated Cost: ");
-		String cmCost = Utils.scanDouble();
+		double cmCost = Utils.scanDouble();
 		Utils.print("\n");
 
 		Campaign campaign = new Campaign(cmName, cmStartDate, cmFinishDate, cmCost);
 
-		client.addNewCampaign(Campaign campaign);
+		client.addNewCampaign(campaign);
 
 		Utils.println("Campaign added succesfully.");
 	}
