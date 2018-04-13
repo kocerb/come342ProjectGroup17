@@ -9,6 +9,9 @@ package come342;
  *
  * @author burakkocer
  */
+
+import model.Client;
+
 public class App {
 
     /**
