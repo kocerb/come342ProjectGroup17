@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList; 
 import java.util.List;
+import come342.Database;
     
 public class Client { 
     private String companyName; 
@@ -39,5 +40,6 @@ public class Client {
     
     public void addNewCampaign(Campaign campaign) {
         this.CampaignList.add(campaign);
+        Database.campaignList.add(campaign);
     }
 }    
