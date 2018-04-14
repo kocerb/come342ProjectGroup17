@@ -11,7 +11,7 @@ public class App {
     }
     
     public static void mainMenu() {
-        Utils.println("Make a selection: ");
+        Utils.println("\nMake a selection: ");
         Utils.println("1- Add a new campaign");        
         Utils.println("2- Show Client List");
         Utils.println("3- Show Campaign List");
@@ -46,14 +46,20 @@ public class App {
     private static void showClientList(){
         Utils.print("\nClient List\n");
         Utils.printSymbol("-", 25);
-        Utils.printHeadings("COMPANY NAME", "COMPANY ADDRESS", "COMPANY EMAIL", "CONTACT NAME", "CONTACT EMAIL");
+        String headers[] = {"COMPANY NAME", "COMPANY ADDRESS", "CONTACT NAME"};
+        Utils.printHeadings(headers.length, headers);
+        for (int i=0; i<Database.clientList.size(); i++) {
+            String items[] = {Database.clientList.get(i).getCompanyName(), Database.clientList.get(i).getCompanyAddress(), Database.clientList.get(i).getContactName()};
+            Utils.printItems(items.length, items);
+            }
+        
         //PINAR
     }
         
     private static void showCampaignList(){
         Utils.print("\nCampain List\n");
         Utils.printSymbol("-", 25);
-        Utils.printHeadings("CAMPAIGN TITLE", "START DATE", "FINISH DATE", "ESTIMATED COST", "ASSIGNED STAFFS");
+        //Utils.printHeadings("CAMPAIGN TITLE", "START DATE", "FINISH DATE", "ESTIMATED COST", "ASSIGNED STAFFS");
         //PINAR
     }
 }

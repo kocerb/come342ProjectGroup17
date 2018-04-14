@@ -39,8 +39,22 @@ public class Utils {
         return String.join("", Collections.nCopies(n, "-"));
     }
     
-    public static void printHeadings(String h1, String h2, String h3, String h4, String h5){
-        System.out.printf("%n%-25s%-25s%-25s%-25s%-25s", h1, h2, h3, h4, h5);
-        System.out.printf("%n%-25s%-25s%-25s%-25s%-25s", makeDashes(20),makeDashes(20),makeDashes(20),makeDashes(20),makeDashes(20)); 
+    public static void printHeadings(int n, String[] h){
+        System.out.printf("%n");
+        for(int i=0;i<n;i++) {
+            System.out.printf("%-25s", h[i]);
+        }
+        
+        System.out.printf("%n");
+        for(int i=0;i<n;i++) {
+            System.out.printf("%-25s", makeDashes(20));
+        }
+    }
+    
+        public static void printItems(int n, String[] h){
+        System.out.printf("%n");
+        for(int i=0;i<n;i++) {
+            System.out.printf("%-25s", h[i]);
+        }
     }
 }
