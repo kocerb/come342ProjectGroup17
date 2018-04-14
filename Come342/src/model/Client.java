@@ -9,8 +9,10 @@ public class Client {
     private String contactName; 
     private List<Campaign> CampaignList = new ArrayList<Campaign>();
         
-    public Client(){
-        //PINAR
+    public Client(String companyName, String companyAddress, String contactName){
+        this.companyName = companyName;
+        this.companyAddress = companyAddress;
+        this.contactName = contactName;
     }
        
     public List<Campaign> getClientCampaign(){ 
