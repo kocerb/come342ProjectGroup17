@@ -7,12 +7,14 @@ import model.Campaign;
 
 public class AddNewCampaign {
     private static final AddNewCampaign instance = new AddNewCampaign();
-    
     public static AddNewCampaign getInstance() {
         return instance;
     }
     
     private AddNewCampaign(){
+    }
+    
+    public void init (){
        	getClients();
     	selectClient();
     }
