@@ -15,7 +15,7 @@ public class Client {
         this.companyAddress = companyAddress;
         this.contactName = contactName;
     }
-       
+    
     public List<Campaign> getClientCampaign(){ 
         return CampaignList; 
     } 

@@ -1,15 +1,11 @@
 package come342;
-
 import helper.Utils;
 import controller.*;
-
 public class App {
-
     public static void main(String[] args) {
         Database.init();
         mainMenu();
     }
-    
     public static void mainMenu() {
         Utils.println("\nMake a selection: ");
         Utils.println("1- Add a new campaign");        
@@ -42,24 +38,24 @@ public class App {
                 break;
         }
     }
-        
     private static void showClientList(){
         Utils.print("\nClient List\n");
         Utils.printSymbol("-", 25);
         String headers[] = {"COMPANY NAME", "COMPANY ADDRESS", "CONTACT NAME"};
         Utils.printHeadings(headers.length, headers);
-        for (int i=0; i<Database.clientList.size(); i++) {
-            String items[] = {Database.clientList.get(i).getCompanyName(), Database.clientList.get(i).getCompanyAddress(), Database.clientList.get(i).getContactName()};
+	Database.clientList.forEach((client) -> {
+            String items[] = {client.getCompanyName(), client.getCompanyAddress(), client.getContactName()};
             Utils.printItems(items.length, items);
-            }
-        
-        //PINAR
-    }
-        
+            });        
+        }
     private static void showCampaignList(){
         Utils.print("\nCampain List\n");
         Utils.printSymbol("-", 25);
-        //Utils.printHeadings("CAMPAIGN TITLE", "START DATE", "FINISH DATE", "ESTIMATED COST", "ASSIGNED STAFFS");
-        //PINAR
+        String headers[] = {"CAMPAIGN NAME", "CAMPAIGN START DATE", "CAMPAIGN FINISH DATE","ESTIMATED COST"};
+        Utils.printHeadings(headers.length, headers);
+	Database.campaignList.forEach((campaign) -> {
+            String items[] = {campaign.getTitle(), campaign.getStartDate(), campaign.getFinishDate(),campaign.getEstimatedCost().toString()};
+            Utils.printItems(items.length, items);
+            });
     }
 }

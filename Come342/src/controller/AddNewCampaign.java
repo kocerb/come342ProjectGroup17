@@ -21,12 +21,11 @@ public class AddNewCampaign {
 
     private void getClients() {
 	  	Utils.println("Select a client to add campaign:");
-	  	int i = 1;
-	  	Database.clientList.forEach((client) -> {
+	  	  	 for(int i=1;i<=Database.clientList.size();i++){   
 	  		 Utils.print(i + ". ");
-	  		 Utils.print(client.getCompanyName());
-	  		 Utils.print("\n");
-	  	});
+	  		 Utils.print(Database.clientList.get(i-1).getCompanyName());
+	  		 Utils.print("\n");        
+	  	}
 	  	Utils.println("Selection: ");
 	}
 
