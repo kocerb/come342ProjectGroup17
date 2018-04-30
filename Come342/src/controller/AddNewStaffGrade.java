@@ -16,6 +16,15 @@ public class AddNewStaffGrade {
     private AddNewStaffGrade(){
     }
     
+    public void init (StaffMember staffMember){
+        this.addNewGrade(staffMember);
+    }
+    
+    public void update (){
+        this.getStaffs();
+        this.selectStaff();
+    }
+    
     private void getStaffs() {
  	Utils.println("Select a staff to add a new grade:");
         for(int i=1;i<=Database.staffList.size();i++){   
@@ -26,7 +35,7 @@ public class AddNewStaffGrade {
 	Utils.println("Selection: ");
 	}
     
-    private void selectClient() {
+    private void selectStaff() {
   	int choice = Utils.scanInt();
   	StaffMember selectedStaff = Database.staffList.get(choice - 1);
 	this.addNewGrade(selectedStaff);
