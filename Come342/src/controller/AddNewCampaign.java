@@ -14,8 +14,12 @@ public class AddNewCampaign {
     private AddNewCampaign(){
     }
     
-    public void init (){
-       	getClients();
+    public void init (Client client){
+        this.addCampaign(client);
+    }
+    
+    public void update (){
+        getClients();
     	selectClient();
     }
 
