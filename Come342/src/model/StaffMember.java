@@ -15,6 +15,31 @@ abstract public class StaffMember {
     private String staffStartDate;
     private String staffEmail;
     public StaffMember() {
-        
+
     }
+        public void setStaffNo(String staffNumber){
+            this.staffNo=staffNumber;
+        }
+        public void setStaffName(String staffName){
+            this.staffName=staffName;
+        }
+        public void setStartDate(String startDate){
+            this.staffStartDate=startDate;
+        }
+        public void setStaffEmail(String staffEmail){
+            this.staffEmail=staffEmail;
+        }
+        public String getStaffNo(){
+            return this.staffNo;
+        }
+        public String getStaffName(){
+            return this.staffName;
+        }
+        public String getStaffStartDate(){
+            return this.staffStartDate;
+        }
+        public String getStaffEmail(){
+            return this.staffEmail;
+        }
+
 }
