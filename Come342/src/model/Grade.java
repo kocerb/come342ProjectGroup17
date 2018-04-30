@@ -1,6 +1,6 @@
 package model;
 
-import java.model.GradeRate;
+import model.GradeRate;
 
 public class Grade {
     private String gradeName;
@@ -15,7 +15,7 @@ public class Grade {
         this.gradeRate = rate;
     }
 
-    public void setName(name){
+    public void setName(String name){
         this.gradeName = name;
     }
 
@@ -23,15 +23,15 @@ public class Grade {
         return this.gradeName;
     }
 
-    public String getGradeRate(){
-        return this.gradeRate.rate;
+    public double getGradeRate(){
+        return this.gradeRate.getRate();
     }
 
     public String getRateStartDate(){
-        return this.gradeRate.rateStartDate;
+        return this.gradeRate.getRateStartDate();
     }
 
     public String getRateFinishDate(){
-        return this.gradeRate.rateFinishDate;
+        return this.gradeRate.getRateFinishDate();
     }
 }
