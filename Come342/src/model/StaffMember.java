@@ -10,15 +10,16 @@ package model;
  * @author burakkocer
  */
 abstract public class StaffMember {
-    private String staffNo;
+    private int staffNo;
     private String staffName;
     private String staffStartDate;
     private String staffEmail;
+    
     public StaffMember() {
 
     }
-        public void setStaffNo(String staffNumber){
-            this.staffNo=staffNumber;
+        public void setStaffNo(int staffNo){
+            this.staffNo=staffNo;
         }
         public void setStaffName(String staffName){
             this.staffName=staffName;
@@ -29,7 +30,7 @@ abstract public class StaffMember {
         public void setStaffEmail(String staffEmail){
             this.staffEmail=staffEmail;
         }
-        public String getStaffNo(){
+        public int getStaffNo(){
             return this.staffNo;
         }
         public String getStaffName(){

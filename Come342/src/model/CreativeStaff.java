@@ -9,6 +9,11 @@ package model;
  *
  * @author burakkocer
  */
-public class CreativeStaff {
-    
+public class CreativeStaff extends StaffMember{
+    public CreativeStaff(int staffNo, String staffName, String staffStartDate, String staffEmail){
+        super.setStaffNo(staffNo);
+        super.setStaffName(staffName);
+        super.setStartDate(staffStartDate);
+        super.setStaffEmail(staffEmail);
+    }
 }

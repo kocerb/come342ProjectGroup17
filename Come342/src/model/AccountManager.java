@@ -9,6 +9,11 @@ package model;
  *
  * @author burakkocer
  */
-public class AccountManager {
-    
+public class AccountManager extends StaffMember {
+        public AccountManager(int staffNo, String staffName, String staffStartDate, String staffEmail){
+        super.setStaffNo(staffNo);
+        super.setStaffName(staffName);
+        super.setStartDate(staffStartDate);
+        super.setStaffEmail(staffEmail);
+    }
 }
