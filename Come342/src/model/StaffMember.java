@@ -1,19 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 
-/**
- *
- * @author burakkocer
- */
+import model.Grade;
+import java.util.ArrayList;
+import java.util.List;
+import come342.Database;
+
 abstract public class StaffMember {
     private int staffNo;
     private String staffName;
     private String staffStartDate;
     private String staffEmail;
+    private List<Grade> grades = new ArrayList<Grade>();
     
     public StaffMember() {
 
@@ -41,6 +39,11 @@ abstract public class StaffMember {
         }
         public String getStaffEmail(){
             return this.staffEmail;
+        }
+        
+        public void addNewGrade(Grade grade) {
+            this.grades.add(grade);
+            Database.gradeList.add(grade);
         }
 
 }
