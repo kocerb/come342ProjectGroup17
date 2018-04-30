@@ -5,9 +5,9 @@ public class GradeRate {
     private String rateStartDate;
     private String rateFinishDate;
   
-    public GradeRate(double rate, String startDate, String finishDate){
+    public GradeRate(double rate, String startDate){
         this.setRate(rate);
-        this.setDate(startDate, finishDate);
+        this.setDate(startDate, "");
     }
 
     public void setRate(double rate){
