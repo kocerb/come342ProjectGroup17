@@ -45,7 +45,11 @@ public class Campaign {
     public Double getEstimatedCost(){
         return this.estimatedCost;
     }
-        public void assignStaff(StaffMember staff) {
+    public void assignStaff(StaffMember staff) {
         this.StaffList.add(staff);
+    }
+    
+    public List<StaffMember> getStaffList(){
+        return this.StaffList;
     }
 }
