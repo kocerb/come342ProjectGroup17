@@ -28,4 +28,12 @@ public class StaffGrade {
         this.gradeStartDate = today;
         this.gradeFinishDate = null;
     }
+    
+    public void assignLatestGrade(Grade grade, LocalDate date){
+        gradeFinishDate = date.minusDays(1);
+        pastGrades.add(this);
+        this.staffGrade = grade;
+        this.gradeStartDate = date;
+        this.gradeFinishDate = null;
+    }
 }

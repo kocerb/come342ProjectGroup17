@@ -19,7 +19,7 @@ public class ChangeGradeForStaff {
     private ChangeGradeForStaff(){
     }
     
-    public void update (){
+    public void run (){
         this.getStaffs();
         this.selectStaff();
         this.getGrades();
@@ -59,10 +59,6 @@ public class ChangeGradeForStaff {
     
     private void changeGrade() {
         selectedStaff.staffGrade.assignLatestGrade(selectedGrade);
-        //When a member of staff is promoted, the new grade and the date on
-        //which they start on that grade are entered. The old staff grade is
-        //retrieved and the finish date set to the day before the start of the
-        //new one.
     }
 
 }

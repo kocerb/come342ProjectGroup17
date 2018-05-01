@@ -18,7 +18,7 @@ public class AddNewCampaign {
         this.addCampaign(client);
     }
     
-    public void update (){
+    public void run (){
         getClients();
     	selectClient();
     }

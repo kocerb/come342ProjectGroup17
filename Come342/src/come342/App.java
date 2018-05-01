@@ -19,7 +19,7 @@ public class App {
             case 1:
                 Utils.printSymbol("*", 30);
                 Utils.println("\nAdd a new campaign");
-                AddNewCampaign.getInstance().update();
+                AddNewCampaign.getInstance().run();
                 mainMenu();
                 break;
             case 2:
