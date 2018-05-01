@@ -7,15 +7,18 @@ public class GradeRate {
   
     public GradeRate(double rate, String startDate){
         this.setRate(rate);
-        this.setDate(startDate, "");
+        this.setStartDate(startDate);
     }
 
     public void setRate(double rate){
         this.rate = rate;
     }
 
-    public void setDate(String startDate, String finishDate){
+    public void setStartDate(String startDate){
         this.rateStartDate = startDate;
+    }
+    
+    public void setFinishDate(String finishDate){
         this.rateFinishDate = finishDate;
     }
 
@@ -23,11 +26,11 @@ public class GradeRate {
         return this.rate;
     }
 
-    public String getRateStartDate(){
+    public String getStartDate(){
         return this.rateStartDate;
     }
 
-    public String getRateFinishDate(){
+    public String getFinishDate(){
         return this.rateFinishDate;
     }
 }

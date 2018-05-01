@@ -17,4 +17,8 @@ public class ChangeRateForGrade {
     
     private ChangeRateForGrade(){
     }
+    
+    public void init(){
+        
+    }
 }

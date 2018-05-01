@@ -1,7 +1,7 @@
 
 package model;
 
-import model.Grade;
+//import model.StaffGrade;
 import java.util.ArrayList;
 import java.util.List;
 import come342.Database;
@@ -11,7 +11,8 @@ abstract public class StaffMember {
     private String staffName;
     private String staffStartDate;
     private String staffEmail;
-    private List<Grade> grades = new ArrayList<Grade>();
+    private StaffGrade staffGrade;
+    private List<StaffGrade> pastGrades = new ArrayList<StaffGrade>();
     
     public StaffMember() {
 
@@ -41,9 +42,11 @@ abstract public class StaffMember {
             return this.staffEmail;
         }
         
+        /*
         public void addNewGrade(Grade grade) {
             this.grades.add(grade);
             Database.gradeList.add(grade);
         }
+*/
 
 }
