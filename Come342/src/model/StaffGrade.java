@@ -8,7 +8,7 @@ import java.util.List;
 public class StaffGrade {
     private LocalDate gradeStartDate;
     private LocalDate gradeFinishDate;
-    private Grade staffGrade;    
+    public Grade staffGrade;    
     private List<StaffGrade> pastGrades = new ArrayList<StaffGrade>();
     
     public StaffGrade(Grade grade, LocalDate startDate){

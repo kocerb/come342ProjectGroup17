@@ -8,9 +8,8 @@ public class Grade {
     private String gradeName;
     public GradeRate gradeRate;
   
-    public Grade(String gradeName, GradeRate gradeRate){
+    public Grade(String gradeName){
     	this.setName(gradeName);
-        this.setRate(gradeRate);
     }
 
     public void setRate(GradeRate rate){

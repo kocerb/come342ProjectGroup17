@@ -8,7 +8,7 @@ public class GradeRate {
     private double rate;
     private LocalDate rateStartDate;
     private LocalDate rateFinishDate;
-    private List<GradeRate> pastRates = new ArrayList<GradeRate>();
+    public List<GradeRate> pastRates = new ArrayList<GradeRate>();
   
     public GradeRate(double rate, LocalDate startDate){
         this.setRate(rate);

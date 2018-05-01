@@ -23,16 +23,9 @@ public class AddNewGrade {
     private void createNewGrade() {
         Utils.println("Enter name of the grade: ");
         String name = Utils.scanString();
-        Utils.println("Enter rate of the grade: ");
-        double rate = Utils.scanDouble();
-        Utils.println("Enter start date of the rate in format YYYY MM DD: ");
-        int year = Utils.scanInt();
-        int month = Utils.scanInt();
-        int day = Utils.scanInt();
-        LocalDate startDate = LocalDate.of(year, month, day);
+        Grade grade = new Grade(name);
         
-        GradeRate gradeRate = new GradeRate(rate, startDate);
-        Grade grade = new Grade(name, gradeRate);
+        ChangeRateForGrade.getInstance().init(grade);
         
         Database.gradeList.add(grade);
         
