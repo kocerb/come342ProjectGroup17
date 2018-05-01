@@ -1,11 +1,16 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.time.LocalDate;
+
 public class GradeRate {
     private double rate;
-    private String rateStartDate;
-    private String rateFinishDate;
+    private LocalDate rateStartDate;
+    private LocalDate rateFinishDate;
+    private List<GradeRate> pastRates = new ArrayList<GradeRate>();
   
-    public GradeRate(double rate, String startDate){
+    public GradeRate(double rate, LocalDate startDate){
         this.setRate(rate);
         this.setStartDate(startDate);
     }
@@ -14,11 +19,11 @@ public class GradeRate {
         this.rate = rate;
     }
 
-    public void setStartDate(String startDate){
+    public void setStartDate(LocalDate startDate){
         this.rateStartDate = startDate;
     }
     
-    public void setFinishDate(String finishDate){
+    public void setFinishDate(LocalDate finishDate){
         this.rateFinishDate = finishDate;
     }
 
@@ -26,11 +31,28 @@ public class GradeRate {
         return this.rate;
     }
 
-    public String getStartDate(){
+    public LocalDate getStartDate(){
         return this.rateStartDate;
     }
 
-    public String getFinishDate(){
+    public LocalDate getFinishDate(){
         return this.rateFinishDate;
+    }
+    
+    public void assignLatestRate(double rate){
+        LocalDate today = LocalDate.now();
+        rateFinishDate = today.minusDays(1);
+        pastRates.add(this);
+        this.rate = rate;
+        this.rateStartDate = today;
+        this.rateFinishDate = null;
+    }
+    
+    public void assignLatestRate(double rate, LocalDate startDate){
+        rateFinishDate = startDate.minusDays(1);
+        pastRates.add(this);
+        this.rate = rate;
+        this.rateStartDate = startDate;
+        this.rateFinishDate = null;
     }
 }
