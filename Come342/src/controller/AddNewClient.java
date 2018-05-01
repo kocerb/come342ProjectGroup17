@@ -33,7 +33,7 @@ public class AddNewClient {
 	Utils.print("\n");		
 
 	Utils.print("Contact Name: ");
-	String conName = Utils.scanDouble();
+	String conName = Utils.scanString();
 	Utils.print("\n");
         
        	Utils.print("Contact E-mail: ");
@@ -45,10 +45,10 @@ public class AddNewClient {
 	Database.clientList.add(client);
 
 	Utils.println("Client added succesfully.");
-        this.addCampaign(Client client);
+        this.addCampaign(client);
     }
     
-    public void addCampaign() {
-        AddNewCampaign.getInstance.init(client);
+    public void addCampaign(Client client) {
+        AddNewCampaign.getInstance().init(client);
     }
 }

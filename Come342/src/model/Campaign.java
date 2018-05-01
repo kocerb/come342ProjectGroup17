@@ -1,5 +1,6 @@
 package model;
 
+//import come342.Database;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ public class Campaign {
     private String startDate;
     private String finishDate;
     private Double estimatedCost;
+    private List<StaffMember> StaffList = new ArrayList<StaffMember>();
   
     public Campaign(String title, String startDate, String finishDate, Double estimatedCost){
     	this.setTitle(title);
@@ -42,5 +44,8 @@ public class Campaign {
 
     public Double getEstimatedCost(){
         return this.estimatedCost;
+    }
+        public void assignStaff(StaffMember staff) {
+        this.StaffList.add(staff);
     }
 }
