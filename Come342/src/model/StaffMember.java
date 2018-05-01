@@ -40,5 +40,9 @@ abstract public class StaffMember {
     public String getStaffEmail(){
         return this.staffEmail;
     }
+    
+    public void setStaffGrade(StaffGrade staffGrade){
+        this.staffGrade = staffGrade;
+    }
 
 }
