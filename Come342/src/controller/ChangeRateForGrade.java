@@ -35,13 +35,13 @@ public class ChangeRateForGrade {
 	Utils.println("Selection: ");        
     }
     
-    public void selectGrade() {
+    public void selectGrade(){
   	int choice = Utils.scanInt();
   	Grade selectedGrade = Database.gradeList.get(choice - 1);
         this.changeRate(selectedGrade);
     }
     
-    public void changeRate(Grade grade) {
+    public void changeRate(Grade grade){
         Utils.println("Enter new rate of the grade: ");
         double rate = Utils.scanDouble();
         Utils.println("Enter start date of the rate in format YYYY MM DD: ");
@@ -50,8 +50,12 @@ public class ChangeRateForGrade {
         int day = Utils.scanInt();
         LocalDate startDate = LocalDate.of(year, month, day);
         
-        GradeRate gradeRate = new GradeRate(rate, startDate);
-        grade.setRate(gradeRate);
+        if (grade.gradeRate != null) {
+            grade.gradeRate.assignLatestRate(rate, startDate);
+        } else {        
+            GradeRate gradeRate = new GradeRate(rate, startDate);
+            grade.gradeRate = gradeRate;
+        }
         
         Utils.println("Grade rate updated succesfully.");
     }    

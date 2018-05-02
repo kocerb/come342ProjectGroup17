@@ -13,7 +13,7 @@ public class AddNewClient {
     private AddNewClient(){
     }
     
-    public void init (){
+    public void run (){
         addClient();
     }
     

@@ -5,7 +5,6 @@ import come342.Database;
 import helper.Utils;
 import model.StaffMember;
 import model.Grade;
-//import model.StaffGrade;
 
 public class ChangeGradeForStaff {
     private static final ChangeGradeForStaff instance = new ChangeGradeForStaff();

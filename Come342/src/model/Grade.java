@@ -1,9 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-import model.GradeRate;
-
 public class Grade {
     private String gradeName;
     public GradeRate gradeRate;

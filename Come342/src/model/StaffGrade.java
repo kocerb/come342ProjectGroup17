@@ -8,11 +8,11 @@ import java.util.List;
 public class StaffGrade {
     private LocalDate gradeStartDate;
     private LocalDate gradeFinishDate;
-    public Grade staffGrade;    
+    public Grade grade;    
     private List<StaffGrade> pastGrades = new ArrayList<StaffGrade>();
     
     public StaffGrade(Grade grade, LocalDate startDate){
-        this.staffGrade = grade;
+        this.grade = grade;
         this.gradeStartDate = startDate;
     }
     
@@ -24,7 +24,7 @@ public class StaffGrade {
         LocalDate today = LocalDate.now();
         gradeFinishDate = today.minusDays(1);
         pastGrades.add(this);
-        this.staffGrade = grade;
+        this.grade = grade;
         this.gradeStartDate = today;
         this.gradeFinishDate = null;
     }
@@ -32,7 +32,7 @@ public class StaffGrade {
     public void assignLatestGrade(Grade grade, LocalDate date){
         gradeFinishDate = date.minusDays(1);
         pastGrades.add(this);
-        this.staffGrade = grade;
+        this.grade = grade;
         this.gradeStartDate = date;
         this.gradeFinishDate = null;
     }

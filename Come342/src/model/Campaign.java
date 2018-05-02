@@ -1,17 +1,17 @@
 package model;
 
-//import come342.Database;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class Campaign {
     private String title;
-    private String startDate;
-    private String finishDate;
+    private LocalDate startDate;
+    private LocalDate finishDate;
     private Double estimatedCost;
     private List<StaffMember> StaffList = new ArrayList<StaffMember>();
   
-    public Campaign(String title, String startDate, String finishDate, Double estimatedCost){
+    public Campaign(String title, LocalDate startDate, LocalDate finishDate, Double estimatedCost){
     	this.setTitle(title);
     	this.setDate(startDate, finishDate);
     	this.setEstimatedCost(estimatedCost);
@@ -21,7 +21,7 @@ public class Campaign {
         this.title=ctitle;
     }
 
-    public void setDate(String sDate, String fDate){
+    public void setDate(LocalDate sDate, LocalDate fDate){
         this.startDate=sDate;
         this.finishDate=fDate;
     }
@@ -34,11 +34,11 @@ public class Campaign {
         return this.title;
     }
 
-    public String getStartDate(){
+    public LocalDate getStartDate(){
         return this.startDate;
     }
 
-    public String getFinishDate(){
+    public LocalDate getFinishDate(){
         return this.finishDate;
     }
 

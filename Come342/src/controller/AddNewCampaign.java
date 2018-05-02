@@ -2,6 +2,7 @@ package controller;
 
 import helper.Utils;
 import come342.Database;
+import java.time.LocalDate;
 import model.Client;
 import model.Campaign;
 
@@ -40,29 +41,36 @@ public class AddNewCampaign {
 	}
 
     private void addCampaign(Client client) {
-		Utils.println("Enter campaign details");
-		
-		Utils.print("Campaign Name: ");
-		String cmName = Utils.scanString();
-		Utils.print("\n");
+	Utils.println("Enter campaign details");
+	
+	Utils.print("Campaign Name: ");
+	String cmName = Utils.scanString();
+	Utils.print("\n");
 
-		Utils.print("Campaign Start Date: ");
-		String cmStartDate = Utils.scanString();
-		Utils.print("\n");
+	Utils.print("Campaign Start Date in format YYYY MM DD: ");
+	int year = Utils.scanInt();
+        int month = Utils.scanInt();
+        int day = Utils.scanInt();
+        LocalDate cmStartDate = LocalDate.of(year, month, day);
+	Utils.print("\n");
 
-		Utils.print("Campaign Finish Date: ");
-		String cmFinishDate = Utils.scanString();
-		Utils.print("\n");		
+        
+	Utils.print("Campaign Finish Date in format YYYY MM DD: ");
+	year = Utils.scanInt();
+        month = Utils.scanInt();
+        day = Utils.scanInt();
+        LocalDate cmFinishDate = LocalDate.of(year, month, day);
+	Utils.print("\n");		
 
-		Utils.print("Estimated Cost: ");
-		double cmCost = Utils.scanDouble();
-		Utils.print("\n");
+	Utils.print("Estimated Cost: ");
+	double cmCost = Utils.scanDouble();
+	Utils.print("\n");
 
-		Campaign campaign = new Campaign(cmName, cmStartDate, cmFinishDate, cmCost);
+	Campaign campaign = new Campaign(cmName, cmStartDate, cmFinishDate, cmCost);
 
-		client.addNewCampaign(campaign);
+	client.addNewCampaign(campaign);
 
-		Utils.println("Campaign added succesfully.");
+	Utils.println("Campaign added succesfully.");
 	}
 
 }

@@ -4,9 +4,7 @@ import helper.Utils;
 import come342.Database;
 import java.util.ArrayList;
 import java.util.List;
-import model.Client;
 import model.Campaign;
-import model.CreativeStaff;
 import model.StaffMember;
 
 public class AssignStaffToCampaign {
@@ -74,9 +72,11 @@ public class AssignStaffToCampaign {
         int choice = Utils.scanInt();
         this.selectedStaff = this.creativeList.get(choice-1);
     }
+    
     public void assignStaff(){
         selectedCampaign.assignStaff(selectedStaff);
     }
+    
     public void assignStaff(Campaign campaign){
         campaign.assignStaff(selectedStaff);
     }

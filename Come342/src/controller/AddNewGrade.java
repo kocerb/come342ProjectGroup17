@@ -3,9 +3,7 @@ package controller;
 
 import helper.Utils;
 import come342.Database;
-import java.time.LocalDate;
 import model.Grade;
-import model.GradeRate;
 
 public class AddNewGrade {
     private static final AddNewGrade instance = new AddNewGrade();
@@ -16,7 +14,7 @@ public class AddNewGrade {
     private AddNewGrade(){
     }
     
-    public void init (){
+    public void run (){
         this.createNewGrade();
     }
   

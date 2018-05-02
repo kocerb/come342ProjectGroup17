@@ -1,14 +1,11 @@
-
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-import come342.Database;
+import java.time.LocalDate;
 
 abstract public class StaffMember {
     private int staffNo;
     private String staffName;
-    private String staffStartDate;
+    private LocalDate staffStartDate;
     private String staffEmail;
     public StaffGrade staffGrade;
     
@@ -22,7 +19,7 @@ abstract public class StaffMember {
     public void setStaffName(String staffName){
         this.staffName=staffName;
     }
-    public void setStartDate(String startDate){
+    public void setStartDate(LocalDate startDate){
         this.staffStartDate=startDate;
     }
     public void setStaffEmail(String staffEmail){
@@ -34,7 +31,7 @@ abstract public class StaffMember {
     public String getStaffName(){
         return this.staffName;
     }
-    public String getStaffStartDate(){
+    public LocalDate getStaffStartDate(){
         return this.staffStartDate;
     }
     public String getStaffEmail(){
